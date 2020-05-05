@@ -26,12 +26,14 @@ func RunMockServer() {
 
 	go createMockRequest(1, shortProcess, &u1) // user 1:  current: 6s   total: 6s
 	time.Sleep(1 * time.Second)
+	time.Sleep(7 * time.Second)
 
 	go createMockRequest(2, longProcess, &u2)  // user 2:  current: 11s  total: 11s
 	time.Sleep(2 * time.Second)
 
 	go createMockRequest(3, shortProcess, &u1) // user 1:  current: 6s   total: 12s
 	time.Sleep(1 * time.Second)
+	time.Sleep(5 * time.Second)
 
 	go createMockRequest(4, longProcess, &u1)  // user 1:  current: 11s  total: 23s
 
